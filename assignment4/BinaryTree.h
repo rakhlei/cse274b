@@ -46,8 +46,6 @@ public:
 	virtual void traverse2();
 	virtual void bfTraverse();
 	virtual int height2(Node* u);
-	virtual bool isBalanced();
-	virtual int isBalanced(Node* u);
 };
 
 class BTNode1: public BTNode<BTNode1> {
@@ -271,39 +269,7 @@ int BinaryTree<Node>::height2(Node* u) {
 
 }
 
-// checks whether tree is balanced recursively
-template<class Node>
-bool BinaryTree<Node>::isBalanced() {
-	// if recursive function returns -2
-	// then tree is not balanced
-	if (isBalanced(r) == -2)
-		return false;
-	// if doesn't return -2, then tree is balanced
-	else
-		return true;
-}
 
-template<class Node>
-int BinaryTree<Node>::isBalanced(Node* u) {
-	if (u == nil) {
-		return 0;
-	}
-	int left_size = isBalanced(u->left);
-	int right_size = isBalanced(u->right);
-	// if found that different is greater than 2 (specified by -2)
-	// then return -2
-	if (left_size == -2 || right_size == -2)
-		return -2;
-	else {
-		// if difference is less than 2, return size
-		if (abs(left_size - right_size) < 2)
-			return 1 + left_size + right_size;
-		else
-			// if difference greater than 2, return -2
-			return -2;
-	}
-
-}
 
 } /* namespace ods */
 #endif /* BINARYTREE_H_ */
