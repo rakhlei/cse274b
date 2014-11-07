@@ -60,7 +60,7 @@ public:
 	virtual void preOrder(Node *u, int &counter);
 	virtual void postOrder();
 	virtual void postOrder(Node *u, int &counter);
-
+	virtual DLList<T> getLE(T x);
 
 };
 
@@ -277,7 +277,8 @@ void BinarySearchTree<Node, T>::inOrder(Node *u, int &counter) {
 	inOrder(u->left, counter);
 	u->in_order_num_ = ++counter; // sets in order value of u to counter + 1
 	// for testing purposes
-	cout << "element: " << u->x << " in order value: " << u->in_order_num_ << endl;
+	cout << "element: " << u->x << " in order value: " << u->in_order_num_
+			<< endl;
 	inOrder(u->right, counter);
 
 }
@@ -369,7 +370,57 @@ void BinarySearchTree<Node, T>::rotateRight(Node *u) {
 	}
 }
 
+template<class Node, class T>
+DLList<T> BinarySearchTree<Node, T>::getLE(T x) {
+	int counter = 0; // keeps track of how many adds
+	DLList<T> ret;
+	Node *prev;
+	Node *current = r;
 
+	// loop continues until you get to the smallest value
+	while (current->left != nil) {
+		prev = current;
+		current = current->left;
+	}
+
+	// loop continues while value is less than or equal to x
+	while (current->x <= x) {
+		ret.add(current->x); // add value to DLList
+		counter++;
+		// checks to see if value is greater than what is in the list
+		// if so then returns the counter that
+		if (counter >= n) return ret;
+		// testing purposes
+		cout << current->x << endl;
+		// traverses through left side of sub-tree
+		if (current->right != nil) {
+			prev = current;
+			current = current->right;
+			while (current->left != nil) {
+				prev = current;
+				current = current->left;
+			}
+		}
+		// goes back up tree
+		else {
+			// biggest value in tree scenario
+			if (current->x == x) {
+				ret.add(current->x);
+				counter++;
+				return ret;
+			}
+			prev = current;
+			current = current->parent;
+			// goes back up tree
+			while (prev == current->right) {
+				prev = current;
+				current = current->parent;
+			}
+		}
+
+	}
+	return ret;
+}
 
 /*
  template<class T>
