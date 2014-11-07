@@ -54,12 +54,12 @@ public:
 	virtual T findEQ(T x);
 	virtual int size();
 	virtual void clear();
-	virtual void inOrder();
-	virtual void inOrder(Node *u, int &counter);
-	virtual void preOrder();
-	virtual void preOrder(Node *u, int &counter);
-	virtual void postOrder();
-	virtual void postOrder(Node *u, int &counter);
+	virtual void inOrderNumber();
+	virtual void inOrderNumber(Node *u, int &counter);
+	virtual void preOrderNumber();
+	virtual void preOrderNumber(Node *u, int &counter);
+	virtual void postOrderNumber();
+	virtual void postOrderNumber(Node *u, int &counter);
 	virtual DLList<T> getLE(T x);
 
 };
@@ -263,60 +263,60 @@ void BinarySearchTree<Node, T>::clear() {
 
 // calls recursive function to set in order values
 template<class Node, class T> inline
-void BinarySearchTree<Node, T>::inOrder() {
+void BinarySearchTree<Node, T>::inOrderNumber() {
 	int counter = -1;
-	inOrder(r, counter);
+	inOrderNumber(r, counter);
 
 }
 
 template<class Node, class T> inline
-void BinarySearchTree<Node, T>::inOrder(Node *u, int &counter) {
+void BinarySearchTree<Node, T>::inOrderNumber(Node *u, int &counter) {
 	if (u == nil)
 		return;
 	// left, right, root, right
-	inOrder(u->left, counter);
+	inOrderNumber(u->left, counter);
 	u->in_order_num_ = ++counter; // sets in order value of u to counter + 1
 	// for testing purposes
 	cout << "element: " << u->x << " in order value: " << u->in_order_num_
 			<< endl;
-	inOrder(u->right, counter);
+	inOrderNumber(u->right, counter);
 
 }
 
 // calls recursive function to set pre order values
 template<class Node, class T> inline
-void BinarySearchTree<Node, T>::preOrder() {
+void BinarySearchTree<Node, T>::preOrderNumber() {
 	int counter = -1;
-	preOrder(r, counter);
+	preOrderNumber(r, counter);
 
 }
 
 template<class Node, class T> inline
-void BinarySearchTree<Node, T>::preOrder(Node *u, int &counter) {
+void BinarySearchTree<Node, T>::preOrderNumber(Node *u, int &counter) {
 	if (u == nil)
 		return;
 	// sets pre num before recursive methods called
 	u->pre_num_ = ++counter;
 	// for testing purposes
 	cout << "element: " << u->x << " pre order value: " << u->pre_num_ << endl;
-	preOrder(u->left, counter);
-	preOrder(u->right, counter);
+	preOrderNumber(u->left, counter);
+	preOrderNumber(u->right, counter);
 }
 
 // calls recursive function to set post order values
 template<class Node, class T> inline
-void BinarySearchTree<Node, T>::postOrder() {
+void BinarySearchTree<Node, T>::postOrderNumber() {
 	int counter = -1;
-	postOrder(r, counter);
+	postOrderNumber(r, counter);
 
 }
 
 template<class Node, class T> inline
-void BinarySearchTree<Node, T>::postOrder(Node *u, int &counter) {
+void BinarySearchTree<Node, T>::postOrderNumber(Node *u, int &counter) {
 	if (u == nil)
 		return;
-	postOrder(u->left, counter);
-	postOrder(u->right, counter);
+	postOrderNumber(u->left, counter);
+	postOrderNumber(u->right, counter);
 	// sets post num after resursive calls
 	u->post_num_ = ++counter;
 	// for testing purposes
