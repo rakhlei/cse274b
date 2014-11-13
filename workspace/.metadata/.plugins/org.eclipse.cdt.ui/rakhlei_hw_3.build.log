@@ -1,0 +1,7 @@
+14:56:57 **** Rebuild of configuration Debug for project rakhlei_hw_3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.cpp" 
+g++ -o rakhlei_hw_3.exe "src\\test.o" 
+
+14:56:58 Build Finished (took 857ms)
+

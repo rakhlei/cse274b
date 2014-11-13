@@ -1,0 +1,105 @@
+//============================================================================
+// Name        : rakhlei_hw_4.cpp
+// Author      : IrinaRakhlenko
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "BinaryTree.h"
+#include "BinarySearchTree.h"
+using namespace std;
+using namespace ods;
+
+void testPart1() {
+	cout << "Part 1" << endl;
+	BinarySearchTree<BSTNode1<int>, int> tree;
+	tree.add(15);
+	tree.add(5);
+	tree.add(16);
+	tree.add(3);
+	tree.add(12);
+	tree.add(10);
+	tree.add(13);
+	tree.add(6);
+	tree.add(7);
+	tree.add(20);
+	tree.add(18);
+	tree.add(23);
+
+	cout << "height of node: " << tree.height2(tree.getNode(5)) << endl;
+	cout << "height of tree: " << tree.height() << endl;
+	cout << endl;
+}
+
+void testPart2() {
+	cout << "Part 2" << endl;
+	BinarySearchTree<BSTNode1<int>, int> tree;
+	tree.add(8);
+	tree.add(3);
+	tree.add(10);
+	tree.add(13);
+	tree.add(9);
+	tree.add(2);
+	tree.add(4);
+
+	cout << "Is tree balanced?: " << tree.isBalanced() << endl;
+	cout << endl;
+}
+
+void testPart3() {
+	cout << "Part 3" << endl;
+	BinarySearchTree<BSTNode1<int>, int> tree;
+	tree.add(15);
+	tree.add(5);
+	tree.add(3);
+	tree.add(12);
+	tree.add(10);
+	tree.add(6);
+	tree.add(7);
+	tree.add(13);
+	tree.add(16);
+	tree.add(20);
+	tree.add(18);
+	tree.add(23);
+	cout << "pre order: " << endl;
+	tree.preOrder();
+	cout << endl;
+	cout << "in order: " << endl;
+	tree.inOrder();
+	cout << "post order: " << endl;
+	tree.postOrder();
+
+}
+
+void testPart4() {
+	cout << "Part 4" << endl;
+		BinarySearchTree<BSTNode1<int>, int> tree;
+		tree.add(15);
+		tree.add(5);
+		tree.add(3);
+		tree.add(12);
+		tree.add(10);
+		tree.add(6);
+		tree.add(7);
+		tree.add(13);
+		tree.add(16);
+		tree.add(20);
+		tree.add(18);
+		tree.add(23);
+
+		tree.getLE(5);
+		tree.getLE(12);
+
+}
+
+int main() {
+
+	testPart1();
+	testPart2();
+	testPart3();
+	testPart4();
+
+	return 0;
+}

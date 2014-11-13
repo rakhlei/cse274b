@@ -1,0 +1,85 @@
+/*
+ * DataStructureTester.h
+ *
+ *  Created on: Nov 10, 2014
+ *      Author: Irina
+ */
+
+#ifndef DATASTRUCTURETESTER_H_
+#define DATASTRUCTURETESTER_H_
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "ChainedHashTable.h"
+#include "LinearHashTable.h"
+#include "BinarySearchTree.h"
+#include "Treap.h"
+#include "RedBlackTree.h"
+
+namespace ods {
+template<class T>
+class DataStructureTester: public ChainedHashTable<int>,
+		public LinearHashTable<int>,
+		public BinarySearchTree<BSTNode1<int>, int>,
+		public Treap<int>,
+		public RedBlackTree<int> {
+public:
+	DataStructureTester();
+	~DataStructureTester();
+	int DoSequentialAdd(int start, int end, int step);
+	int DoRandomAdd(int n);
+	int DoSequentialRemove(int start, int end, int step);
+	int DoRandomRemove(int n);
+	int DoSequentialFind(int start, int end, int step);
+	int DoRandomFind(int n);
+};
+
+template<class T>
+int DataStructureTester<T>::DoSequentialAdd(int start, int end, int step) {
+	for (int i = start; i <= end; i += step) {
+		// put in add function
+	}
+}
+
+template<class T>
+int DataStructureTester<T>::DoRandomAdd(int n) {
+	srand(time(NULL));
+	for (int i = 0; i < n; i++) {
+		// add.(rand);
+	}
+
+}
+
+template<class T>
+int DataStructureTester<T>::DoSequentialRemove(int start, int end, int step) {
+	for (int i = start; i <= end; i += step) {
+		// put in remove function
+	}
+}
+
+template<class T>
+int DataStructureTester<T>::DoRandomRemove(int n) {
+	srand(time(NULL));
+	for (int i = 0; i < n; i++) {
+		// remove.(rand);
+	}
+}
+
+template<class T>
+int DataStructureTester<T>::DoSequentialFind(int start, int end, int step) {
+	for (int i = start; i <= end; i += step) {
+		// put in find function
+	}
+}
+
+template<class T>
+int DataStructureTester<T>::DoRandomFind(int n) {
+	srand(time(NULL));
+	for (int i = 0; i < n; i++) {
+		// find.(rand);
+	}
+}
+}
+
+#endif /* DATASTRUCTURETESTER_H_ */

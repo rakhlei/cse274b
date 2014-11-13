@@ -1,0 +1,40 @@
+//============================================================================
+// Name        : rakhlei_hw_2.cpp
+// Author      : IrinaRakhlenko
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "DLList.h"
+using namespace std;
+
+using namespace ods;
+
+int main() {
+
+	DLList<char> dllist;
+	dllist.add('i');
+	dllist.add('r');
+	dllist.add('i');
+	dllist.add('n');
+	dllist.add('a');
+
+	cout << "Is this a palindrome? " << dllist.IsPalindrome() << endl;
+
+	dllist.clear();
+
+	DLList <char> dllist2;
+
+	dllist2.add('a');
+	dllist2.add('n');
+	dllist2.add('n');
+	dllist2.add('a');
+
+
+	cout << "Is this a palindrome? " << dllist2.IsPalindrome() << endl;
+
+	return 0;
+}
+

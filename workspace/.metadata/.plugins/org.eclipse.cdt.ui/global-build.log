@@ -1,0 +1,26 @@
+11:15:26 **** Incremental Build of configuration Debug for project rakhlei_hw_5 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.cpp" 
+In file included from ..\src\test.cpp:14:0:
+..\src\DataStructureTester.h: In member function 'int ods::DataStructureTester<L>::DoSequentialRemove(int, int, int)':
+..\src\DataStructureTester.h:60:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\src\DataStructureTester.h: In member function 'int ods::DataStructureTester<L>::DoRandomRemove(int)':
+..\src\DataStructureTester.h:68:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\src\DataStructureTester.h: In member function 'int ods::DataStructureTester<L>::DoSequentialFind(int, int, int)':
+..\src\DataStructureTester.h:75:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+..\src\DataStructureTester.h: In member function 'int ods::DataStructureTester<L>::DoRandomFind(int)':
+..\src\DataStructureTester.h:83:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+g++ -o rakhlei_hw_5.exe "src\\test.o" 
+src\test.o: In function `main':
+C:\Users\Irina\Documents\CSE274\workspace\rakhlei_hw_5\Debug/../src/test.cpp:22: undefined reference to `ods::DataStructureTester<ods::ChainedHashTable<int> >::DataStructureTester()'
+C:\Users\Irina\Documents\CSE274\workspace\rakhlei_hw_5\Debug/../src/test.cpp:24: undefined reference to `ods::DataStructureTester<ods::ChainedHashTable<int> >::~DataStructureTester()'
+C:\Users\Irina\Documents\CSE274\workspace\rakhlei_hw_5\Debug/../src/test.cpp:24: undefined reference to `ods::DataStructureTester<ods::ChainedHashTable<int> >::~DataStructureTester()'
+collect2.exe: error: ld returned 1 exit status

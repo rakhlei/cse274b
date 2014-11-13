@@ -1,0 +1,7 @@
+12:48:50 **** Incremental Build of configuration Debug for project rakhlei_hw_4 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.cpp" 
+g++ -o rakhlei_hw_4.exe "src\\test.o" 
+
+12:48:52 Build Finished (took 1s.672ms)
+

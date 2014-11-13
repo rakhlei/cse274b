@@ -1,0 +1,20 @@
+//============================================================================
+// Name        : rakhlei_hw_5.cpp
+// Author      : IrinaRakhlenko
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "ChainedHashTable.h"
+#include "LinearHashTable.h"
+#include "BinarySearchTree.h"
+#include "Treap.h"
+#include "RedBlackTree.h"
+using namespace std;
+
+int main() {
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}

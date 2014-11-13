@@ -1,0 +1,20 @@
+/*
+ * DataStructureTester.h
+ *
+ *  Created on: Nov 10, 2014
+ *      Author: Irina
+ */
+
+#ifndef DATASTRUCTURETESTER_H_
+#define DATASTRUCTURETESTER_H_
+
+namespace ods{
+template<class T>
+class DataStructureTester{
+
+};
+}
+
+
+
+#endif /* DATASTRUCTURETESTER_H_ */

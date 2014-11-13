@@ -1,0 +1,137 @@
+/*
+ * treque.h
+ *
+ *  Created on: Sep 10, 2014
+ *      Author: Irina
+ */
+
+#ifndef TREQUE_H_
+#define TREQUE_H_
+#include "array.h"
+#include "ArrayDeque.h"
+#include "utils.h"
+
+using namespace std;
+namespace ods {
+
+template<class T>
+class Treque {
+protected:
+	ArrayDeque<T> front_array_;
+	ArrayDeque<T> back_array_;
+
+public:
+	Treque();
+	virtual ~Treque();
+	int size();
+	T get(int i);
+	T set(int i, T x);
+	virtual void add(int i, T x);
+	virtual T remove(int i);
+	virtual void balance();
+	virtual void checkBalance();
+};
+
+template<class T>
+Treque<T>::Treque() :
+		front_array_(), back_array_() {
+}
+
+template<class T>
+Treque<T>::~Treque() {
+}
+
+template<class T>
+int Treque<T>::size() {
+	return (front_array_.size() + back_array_.size());
+}
+
+template<class T>
+T Treque<T>::get(int i) {
+	if (i < front_array_.size())
+		return front_array_.get(i);
+	else
+		return back_array_.get(i - front_array_.size());
+}
+
+template<class T>
+T Treque<T>::set(int i, T x) {
+	if (i < front_array_.size())
+		front_array_.set(i, x);
+	else
+		back_array_.set(i - front_array_.size());
+}
+
+template<class T>
+T Treque<T>::remove(int i) {
+	if (i < front_array_.size()) {
+		balance();
+		checkBalance();
+		return front_array_.remove(i);
+	}
+
+	else {
+		balance();
+		checkBalance();
+		return back_array_.remove(i - front_array_.size());
+	}
+}
+
+template<class T>
+void Treque<T>::checkBalance(){
+	cout << "front size: " << front_array_.size() << endl;
+	cout << "back size: " << back_array_.size() << endl;
+}
+
+// WORK ON THIS
+template<class T>
+void Treque<T>::add(int i, T x) {
+	if (i < front_array_.size()){
+		front_array_.add(i, x);
+		checkBalance();
+		}
+	else{
+		back_array_.add(i - front_array_.size(), x);
+		checkBalance();
+	}
+	balance();
+}
+
+// WORK ON THIS
+template<class T>
+void Treque<T>::balance() {
+	int nums_move;
+	int index_move;
+	T val_move;
+
+	if (front_array_.size() > back_array_.size()) {
+		nums_move = front_array_.size() - size() / 2;
+		index_move = size() / 2;
+
+		for (int i = 0; i < nums_move; i++) {
+			val_move = front_array_.get(index_move);
+			back_array_.add(i, val_move);
+			front_array_.remove(index_move);
+			index_move++;
+		}
+
+	}
+
+	if (front_array_.size() < back_array_.size()) {
+		nums_move = (size() / 2) - front_array_.size();
+		index_move = front_array_.size();
+
+		for (int i = 0; i < nums_move; i++) {
+			val_move = back_array_.get(i);
+			front_array_.add(index_move, val_move);
+			back_array_.remove(i);
+			index_move++;
+		}
+
+	}
+
+}
+
+}
+
+#endif /* TREQUE_H_ */

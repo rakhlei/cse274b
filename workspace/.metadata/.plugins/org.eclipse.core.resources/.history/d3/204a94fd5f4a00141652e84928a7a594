@@ -1,0 +1,64 @@
+//============================================================================
+// Name        : rakhlei_hw_2.cpp
+// Author      : IrinaRakhlenko
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "DLList.h"
+using namespace std;
+
+using namespace ods;
+
+int main() {
+
+	// TESTING IsPalindrome()
+	DLList<char> dllist;
+	dllist.add('i');
+	dllist.add('r');
+	dllist.add('i');
+	dllist.add('n');
+	dllist.add('a');
+	cout << "Is this a palindrome? " << dllist.IsPalindrome() << endl;
+
+	DLList<char> dllist2;
+	dllist2.add('a');
+	dllist2.add('n');
+	dllist2.add('n');
+	dllist2.add('a');
+	cout << "Is this a palindrome? " << dllist2.IsPalindrome() << endl;
+
+	// TESTING Absorb(l2)
+	DLList<int> absorb1;
+	absorb1.add(1);
+	absorb1.add(3);
+	absorb1.add(5);
+	absorb1.add(7);
+
+	DLList<int> absorb2;
+	absorb2.add(21);
+	absorb2.add(23);
+	absorb2.add(25);
+	absorb2.add(27);
+
+	cout << "l1: " << endl;
+	absorb1.PrintList();
+  cout << "l2: " << endl;
+	absorb2.PrintList();
+
+	//absorb1.Absorb(absorb2);
+
+	cout << "l1: " << endl;
+	absorb1.PrintList();
+	cout << "l2: " << endl;
+	absorb2.PrintList();
+
+	//TESTING Deal()
+
+
+
+	return 0;
+}
+

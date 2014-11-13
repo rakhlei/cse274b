@@ -1,0 +1,19 @@
+//============================================================================
+// Name        : rakhlei_hw_2.cpp
+// Author      : IrinaRakhlenko
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "DLList.h"
+using namespace std;
+
+int main() {
+
+	DLList <String> dllist = new dllist("atoyotaisatoyota");
+
+
+	return 0;
+}
