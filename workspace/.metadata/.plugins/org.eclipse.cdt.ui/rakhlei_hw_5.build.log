@@ -1,4 +1,4 @@
-11:15:26 **** Incremental Build of configuration Debug for project rakhlei_hw_5 ****
+11:28:52 **** Incremental Build of configuration Debug for project rakhlei_hw_5 ****
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.cpp" 
 In file included from ..\src\test.cpp:14:0:
@@ -20,10 +20,10 @@ In file included from ..\src\test.cpp:14:0:
  ^
 g++ -o rakhlei_hw_5.exe "src\\test.o" 
 src\test.o: In function `main':
-C:\Users\Irina\Documents\CSE274\workspace\rakhlei_hw_5\Debug/../src/test.cpp:22: undefined reference to `ods::DataStructureTester<ods::ChainedHashTable<int> >::DataStructureTester()'
-C:\Users\Irina\Documents\CSE274\workspace\rakhlei_hw_5\Debug/../src/test.cpp:24: undefined reference to `ods::DataStructureTester<ods::ChainedHashTable<int> >::~DataStructureTester()'
-C:\Users\Irina\Documents\CSE274\workspace\rakhlei_hw_5\Debug/../src/test.cpp:24: undefined reference to `ods::DataStructureTester<ods::ChainedHashTable<int> >::~DataStructureTester()'
+C:\Users\Irina\Documents\GitHub\cse274b\workspace\rakhlei_hw_5\Debug/../src/test.cpp:22: undefined reference to `ods::DataStructureTester<ods::ChainedHashTable<int> >::DataStructureTester()'
+C:\Users\Irina\Documents\GitHub\cse274b\workspace\rakhlei_hw_5\Debug/../src/test.cpp:24: undefined reference to `ods::DataStructureTester<ods::ChainedHashTable<int> >::~DataStructureTester()'
+C:\Users\Irina\Documents\GitHub\cse274b\workspace\rakhlei_hw_5\Debug/../src/test.cpp:24: undefined reference to `ods::DataStructureTester<ods::ChainedHashTable<int> >::~DataStructureTester()'
 collect2.exe: error: ld returned 1 exit status
 
-11:15:28 Build Finished (took 1s.782ms)
+11:28:54 Build Finished (took 1s.563ms)
 
