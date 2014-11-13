@@ -72,12 +72,12 @@ void testPart3() {
 	tree.add(18);
 	tree.add(23);
 	cout << "pre order: " << endl;
-	tree.preOrder();
+	tree.preOrderNumber();
 	cout << endl;
 	cout << "in order: " << endl;
-	tree.inOrder();
+	tree.inOrderNumber();
 	cout << "post order: " << endl;
-	tree.postOrder();
+	tree.postOrderNumber();
 
 }
 
@@ -96,11 +96,15 @@ void testPart4() {
 		tree.add(20);
 		tree.add(18);
 		tree.add(23);
-
+		cout << "Test 1:" << endl;
 		DLList<int> treeTester1 = tree.getLE(5);
+		cout << "Test 2:" << endl;
 		DLList<int> treeTester2 = tree.getLE(12);
+		cout << "Test 3:" << endl;
 		DLList<int> treeTester3 = tree.getLE(18);
+		cout << "Test 4:" << endl;
 		DLList<int> treeTester4 = tree.getLE(23);
+		cout << "Test 5:" << endl;
 		DLList<int> treeTester5 = tree.getLE(50);
 
 		BinarySearchTree<BSTNode1<int>, int> tree2;
@@ -111,7 +115,8 @@ void testPart4() {
 		tree2.add(20);
 		tree2.add(15);
 		tree2.add(22);
-		tree2.getLE(20);
+		cout << "Test 6:" << endl;
+		DLList<int> tree2Tester = tree2.getLE(20);
 
 }
 
