@@ -21,5 +21,5 @@ using namespace ods;
 int main() {
 	DataStructureTester<ChainedHashTable<int> > test;
 	test.DoRandomAdd(100);
-	return 0;
+	return 1;
 }
