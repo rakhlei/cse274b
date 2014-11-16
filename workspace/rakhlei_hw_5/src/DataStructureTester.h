@@ -90,7 +90,12 @@ int DataStructureTester<L>::DoRandomRemove(int n) {
 
 template<class L>
 int DataStructureTester<L>::DoSequentialFind(int start, int end, int step) {
-
+	t_ = clock();
+	for (int i = start; i <= end; i += step) {
+		list.find(i);
+	}
+	t_ = clock() - t_;
+	return (float) t_ / CLOCKS_PER_SEC * 1000;
 }
 
 template<class L>
