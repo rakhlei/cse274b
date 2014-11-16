@@ -77,7 +77,15 @@ int DataStructureTester<L>::DoSequentialRemove(int start, int end, int step) {
 
 template<class L>
 int DataStructureTester<L>::DoRandomRemove(int n) {
-
+	t_ = clock();
+	srand(0);
+	for (int i = 0; i < n; i++) {
+		int x = rand();
+		list.remove(x);
+		//cout << x << endl;
+	}
+	t_ = clock() - t_;
+	return (float) t_ / CLOCKS_PER_SEC * 1000;
 }
 
 template<class L>
