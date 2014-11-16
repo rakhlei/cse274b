@@ -54,7 +54,14 @@ int DataStructureTester<L>::DoSequentialAdd(int start, int end, int step) {
 
 template<class L>
 int DataStructureTester<L>::DoRandomAdd(int n) {
-
+	//srand(0);
+	t_ = clock();
+	for (int i = 0; i < n; i++) {
+		int x = rand()%100000;
+		list.add(x);
+	}
+	t_ = clock() - t_;
+	return (float) t_ / CLOCKS_PER_SEC * 1000;
 
 }
 
