@@ -63,5 +63,11 @@ int main() {
 	cout << "remove(0)" << endl;
 	tester.remove(0);
 	tester.print();
+	cout << "remove(0)" << endl;
+	tester.remove(0);
+	tester.print();
+	cout << "remove(0)" << endl;
+	tester.remove(0);
+	tester.print();
 	return 0;
 }
