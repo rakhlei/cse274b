@@ -47,6 +47,7 @@ public:
 	}
 	static void sort(array<T> &b);
 	void print();
+	bool checkHeap();
 };
 
 
@@ -172,6 +173,16 @@ void BinaryHeap<T>::print() {
 		cout << a[i] << " ";
 	}
 	cout << endl;
+}
+
+template<class T>
+bool BinaryHeap<T>::checkHeap() {
+	if (n < 3) return true;
+	for (int i = 0; i < n/2; i++){
+		if (a[2*i+1] < a[i] || a[2*i+2] < a[i])
+			return false;
+	}
+	return true;
 }
 
 } /* namespace ods */
