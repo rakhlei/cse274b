@@ -83,5 +83,22 @@ int main() {
 	tester.remove(0);
 	cout << tester.checkHeap() << endl;
 	tester.print();
+
+
+	BinaryHeap<int> tester2;
+	for (int i = 1000; i < 2000; i++){
+		tester2.add(i);
+	}
+
+	int counter = 0;
+	for (int i = 0; i < 1000; i++){
+		tester2.remove(i);
+		if (tester2.checkHeap()) counter++;
+	}
+	cout << "After 1000 adds() and removes(), heap property maintained " << counter << " times" << endl;
+
+
+
+
 	return 0;
 }
